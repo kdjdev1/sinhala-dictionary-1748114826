@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sinhala Dictionary - English to Sinhala Translation</title>
+  <meta name="description" content="Your reliable English to Sinhala dictionary. Instantly translate words, explore multiple meanings, and access your translation history. Fast, free, and easy to use." />
+  <meta name="keywords" content="sinhala dictionary, english to sinhala, sinhala translation, dictionary, online dictionary, free dictionary" />
+  <meta name="author" content="Oshan Hettiarachchi" />
+  <link rel="canonical" href="YOUR_DOMAIN_HERE" /> <!-- Replace YOUR_DOMAIN_HERE with your actual domain -->
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="YOUR_DOMAIN_HERE"> <!-- Replace YOUR_DOMAIN_HERE -->
+  <meta property="og:title" content="Sinhala Dictionary - English to Sinhala Translation">
+  <meta property="og:description" content="Fast and accurate English to Sinhala dictionary. Translate words, find meanings, and save your history.">
+  <!-- <meta property="og:image" content="YOUR_PREVIEW_IMAGE_URL"> --> <!-- Optional: Add a preview image URL -->
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="YOUR_DOMAIN_HERE"> <!-- Replace YOUR_DOMAIN_HERE -->
+  <meta property="twitter:title" content="Sinhala Dictionary - English to Sinhala Translation">
+  <meta property="twitter:description" content="The go-to English to Sinhala dictionary for quick and reliable translations.">
+  <!-- <meta property="twitter:image" content="YOUR_PREVIEW_IMAGE_URL"> --> <!-- Optional: Add a preview image URL -->
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Apply theme from localStorage immediately to prevent FOUC
+    (function() {
+      const theme = localStorage.getItem('sinhalaDictionaryTheme'); // Ensure key matches constants.ts
+      if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            sky: {
+              100: '#e0f2fe',
+            },
+            indigo: {
+              200: '#c7d2fe',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body {
+      height: 100%; /* Ensure html and body take full height for flex layout */
+    }
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      display: flex; /* Use flex on body to match #root's flex behavior */
+      flex-direction: column; /* Make body a flex column */
+    }
+    [lang="si"] {
+        font-family: "Noto Sans Sinhala", ui-sans-serif, system-ui, sans-serif;
+        line-height: 1.8;
+    }
+    /* Basic styling for active nav link */
+    .nav-active {
+      font-weight: 600;
+      color: #2563eb; /* Example: blue-600 */
+    }
+    .dark .nav-active {
+      color: #60a5fa; /* Example: dark:blue-400 */
+    }
+    /* Ensure main content area pushes footer down */
+    #root {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* This should be on #root if body is not full height, or on body if #root is direct child */
+      flex-grow: 1; /* Allow #root to grow and fill body height */
+    }
+    main {
+      flex-grow: 1;
+    }
+    /* Enhance spacing between paragraphs in prose content */
+    .prose p,
+    .dark .prose-invert p {
+      margin-bottom: 1.25rem; /* Equivalent to Tailwind's mb-5 for better paragraph separation */
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://esm.sh/react@^19.1.0",
+      "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+      "react/": "https://esm.sh/react@^19.1.0/",
+      "@google/genai": "https://esm.sh/@google/genai@^1.0.1"
+    }
+  }
+  </script>
+  <!-- Schema.org markup for WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sinhala Dictionary",
+    "url": "YOUR_DOMAIN_HERE", // <!-- Replace YOUR_DOMAIN_HERE -->
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "YOUR_DOMAIN_HERE#/?s={search_term_string}", // <!-- Replace YOUR_DOMAIN_HERE and consider how search would integrate -->
+      "query-input": "required name=search_term_string"
+    },
+    "description": "An English to Sinhala dictionary web application for quick and accurate translations."
+  }
+  </script>
+  <!-- 
+    Google AdSense Placeholder: 
+    If using Auto Ads, place the script provided by AdSense here.
+    Example: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script> 
+  -->
+</head>
+<body class="bg-gradient-to-br from-sky-100 via-indigo-100 to-purple-200 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 transition-colors duration-300 text-gray-900 dark:text-gray-100">
+  <div id="root"></div>
+  <script type="module" src="./index.tsx"></script>
+</body>
+</html><link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
